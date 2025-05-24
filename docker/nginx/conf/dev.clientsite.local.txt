@@ -1,0 +1,14 @@
+upstream fastcgi_backend {
+  server  unix:/sock/docker.sock;
+}
+
+server {
+  listen 80;
+  server_name dev.clientsite.local;
+
+  set $MAGE_ROOT /var/www/magento2;
+  fastcgi_buffers 16 16k;
+  fastcgi_buffer_size 32k;
+
+  include /var/www/magento2/nginx.conf;
+}

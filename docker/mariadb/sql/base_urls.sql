@@ -1,0 +1,1 @@
+update core_config_data set value='http://dev.clientsite.local/' where scope_id=0 and scope='default' and path in ('web/unsecure/base_url', 'web/secure/base_url', 'web/unsecure/base_link_url', 'web/secure/base_link_url');
